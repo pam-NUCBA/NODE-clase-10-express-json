@@ -1,0 +1,32 @@
+/* general */
+.cards-row {
+  display: flex;
+  justify-content: center;
+}
+
+.row-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+/* product */
+.card-new-product {
+  background-color: rgb(233, 233, 233);
+}
+
+.card-img-top {
+  height: 30vh;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* error screen */
+.errorImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 90vh;
+  width: auto;
+}

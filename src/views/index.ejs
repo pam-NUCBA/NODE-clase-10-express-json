@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- todo lo que iría en el head puede quedar en el partial header! de esa forma no repito el código-->
+    <!-- para que se vea lindo le puse la extensión de soporte de ejs -->
+    <%- include ('partials/header') %>
+  </head>
+  <body>
+    <%- include ('partials/nav') %>
+    
+    <div class="container">
+    
+      <div class="row cards-row">
+        <!-- una vez que tengo armado el array de products, puedo acá mostrarlo: -->
+        <% products.forEach(function(products) { %>
+        <div class="card col-12 col-xl-3 m-3">
+          <div class="card-header">
+            <h5 class="card-title">
+              <%= products.title %>
+            </h5>
+          </div>
+          <div class="card-body">
+            <img src=<%= products.picture %> alt="product" class="card-img-top">
+            <p class="card-text">
+              <%= products.description %>
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="row row-buttons">
+              <a href="/delete/<%= products.id %>" class="btn btn-danger btn-block col-12 col-lg-4 m-1">Delete</a>
+              <a href="/edit-product/<%= products.id %>" class="btn btn-warning btn-block col-12 col-lg-4 m-1">Modify</a>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+
+        <script src="scripts.js"></script>
+
+
+      </div>
+    </div>
+  </body>
+</html>

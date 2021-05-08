@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <%- include ('partials/header') %>
+</head>
+
+<body>   
+  <%- include ('partials/nav') %>
+  <div class="container">
+    <h2><%=pageTitle%></h2>
+    <div class="row">
+      <!-- ponemos el método y a dónde va a enviar los datos -->
+      <form method="POST" action="/update-product" class="card card-body card-new-product">
+        <div class="form-group">
+          <div class="mb-3 row">
+
+            <label for="title" class="col-sm-2 col-form-label">
+              title *
+            </label>
+            <div class="col-sm-10">
+              <input class="form-control" type="text" id="title" name="title" placeholder="insert a product name" value="<%= title %>"
+                 />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="mb-3 row">
+            <label for="description" class="col-sm-2 col-form-label">
+              description *
+            </label>
+            <div class="col-sm-10">
+              <textarea class="form-control" id="description" name="description" ><%= description%> </textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="mb-3 row">
+            <label for="picture" class="col-sm-2 col-form-label">
+              picture *
+            </label>
+            <div class="col-sm-10">
+              <input class="form-control" type="text" id="picture" name="picture" placeholder="http://www.picture" value="<%= picture %>" 
+                 />
+            </div>
+          </div>
+        </div>
+
+        <div class="d-grid gap-2">
+          <input type="submit" value="<%= button %>" class="btn btn-danger" />
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
